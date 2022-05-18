@@ -8,4 +8,14 @@ struct productos{
    int precio;
 };
 
+void setCodigos(){
 
+
+}
+
+int main(){
+
+  vector<productos> productos;
+
+  return 0;
+}
