@@ -4,7 +4,7 @@
 using namespace std;
 
 //obtiene dni y notas
-void obtenerDatos(int alumnos[10][2]){
+void obtenerDatos(int alumnos[ALUMNOS][2]){
 
   for(int i = 0; i<ALUMNOS; i++){
      cout<<"Ingrese dni del alumno: ";
@@ -15,8 +15,34 @@ void obtenerDatos(int alumnos[10][2]){
 }
 
 //ordena las notas de mayor a menor
-void ordenarNotas(){
+void ordenarNotas(int alumnos[ALUMNOS][2]){
 
+   int notaAuxiliar;//para intercambiar puestos y no perder el valor.
+   int dniAuxiliar;
+   int posicionAuxiliar;
+
+   for(int i = 0; i<ALUMNOS; i++){
+
+      dniAuxiliar = alumnos[i][0];
+      notaAuxiliar = alumnos[i][1];
+      posicionAuxiliar = i;
+
+      for(int j = i+1; j<ALUMNOS; j++){
+
+        if(notaAuxiliar < alumnos[j][1]){
+
+            dniAuxiliar = alumnos[j][0];
+            notaAuxiliar = alumnos[j][1];
+            posicionAuxiliar = j;
+        }
+      }
+      //intercambio de posiciones
+      alumnos[posicionAuxiliar][0] = alumnos[i][0];
+      alumnos[posicionAuxiliar][1] = alumnos[i][1];
+
+      alumnos[i][0] = dniAuxiliar;
+      alumnos[i][1] = notaAuxiliar;
+   }
 }
 
 //muestra el contenido del array
