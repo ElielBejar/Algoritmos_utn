@@ -55,5 +55,11 @@ void mostrarDatos(int alumnos[ALUMNOS][2]){
 
 int main(){
 
+  int alumnos[ALUMNOS][2];
+
+  obtenerDatos(alumnos);
+  ordenarNotas(alumnos);
+  mostrarDatos(alumnos);
+
   return 0;
 }
