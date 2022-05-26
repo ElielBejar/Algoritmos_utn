@@ -46,8 +46,11 @@ void ordenarNotas(int alumnos[ALUMNOS][2]){
 }
 
 //muestra el contenido del array
-void mostrarDatos(){
+void mostrarDatos(int alumnos[ALUMNOS][2]){
 
+   for(int i = 0; i<ALUMNOS; i++){
+      cout<<"Dni: "<<alumnos[i][0]<<", Nota: "<<alumnos[i][1]<<endl;
+   }
 }
 
 int main(){
